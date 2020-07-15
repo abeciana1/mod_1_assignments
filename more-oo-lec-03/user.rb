@@ -16,7 +16,6 @@ class User
         @password = password
         @phone_number = phone_number.split(/[() -]/).delete_if { |x| x == "" }.join.to_i
         @@all << self
-        # binding.pry
     end
 
     def format_phone
@@ -25,13 +24,10 @@ class User
 
     def self.all
         @@all
-        # binding.pry
     end
 
     def change_pass(pass, new_pass)
-        # binding.pryx
         if pass == self.password
-            # binding.pry
             self.password == new_pass
             puts "Your password has been changed. You will be emailed at #{self.email} to verify."
         else
@@ -41,16 +37,12 @@ class User
 
 
     def login_account(username, password)
-        # binding.pry
         if username == self.username && password == self.password 
-        # binding.pry
-        # if User.all.find do |user| 
-            # user.username == username && user.password == password
             puts "Welcome back, #{self.name}"
             weekday = Date.today.wday
-            # binding.pry
             puts "#{name_of_day(weekday)}"
-            # binding.pry
+            puts "We're going to exit you out of the app"
+            exit
         else
             puts "Sorry, you didn't input the correct credentials, please try again."
         end
@@ -58,4 +50,3 @@ class User
 
 
 end
-# puts alex.change_pass("password", "pass")

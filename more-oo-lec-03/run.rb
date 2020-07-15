@@ -50,9 +50,17 @@ def run
         puts "If your choice was a mistake, please type 'exit'"
         change_decision = gets.chomp
     when "N", "n", "No", "no"
-        puts "Great, we'll restart the app and so can try you logging back in!"
-        run
+        puts "If you would like to leave the app, please type 'exit' or type 'run' to restart the app."
+        leave_restart = gets.chomp
     end
+
+    case leave_restart
+    when "run"
+        run
+    when "exit"
+        exit
+    end
+
 
     case change_decision
     when "name", "Name"
