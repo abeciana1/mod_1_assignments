@@ -95,6 +95,4 @@ def run
 
 end
 
-# Date.today.wday  #=> 3 #! create case/when for days of week
-
 run
